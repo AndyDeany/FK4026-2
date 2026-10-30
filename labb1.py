@@ -41,7 +41,7 @@ array_2d = scipy.stats.norm.rvs(size=(3, 1000))
 sums = np.sum(array_2d, axis=0)
 print(len(sums))
 
-print("4. The `axis` argument specifies which axis to sum over. 1 is rowss, 2 columns, etc.")
+print("4. The `axis` argument specifies which axis to sum over. 1 is rows, 2 columns, etc.")
 
 
 
