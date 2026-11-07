@@ -6,6 +6,9 @@ import scipy.stats as sps
 plt.style.use("dark_background")
 
 
+np.random.seed(67)
+
+
 # Uppgift 1
 # 1.1
 dist1 = np.loadtxt("dist1.txt")
