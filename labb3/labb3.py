@@ -14,6 +14,9 @@ print("2.1.1. Det finns många olika oberoende faktorer som bidrar till mätfel,
 
 
 def plot(N, n, distribution):
+      """Plot a histogram of N sums of n independent observations from the given distribution,
+      along with the probability density function of the approximating normal distrubtion.
+      """
       stickprov = distribution.rvs(size=(N, n))
       summor = np.sum(stickprov, axis=1)
 
@@ -23,16 +26,17 @@ def plot(N, n, distribution):
       plt.plot(x, y, color="red")
       plt.show()
 
-plot(10**5, 5, sps.uniform)
 
+plot(10**5, 5, sps.uniform)
 print("2.1.5. Det ser ganska normalfördelade ut vid n>=5, tycker jag.")
 
-print("2.1.6:")
+
+print("2.1.6.")
 plot(10**5, 1, sps.norm)
-print("* Norm funkar bra även med n=1 (såklart).")
+print("  4* Norm funkar bra även med n=1 (såklart).")
 plot(10**5, 5, sps.laplace)
-print("* Laplace funkar bra med n>=5.")
+print("  * Laplace funkar bra med n>=5.")
 plot(10**5, 100, sps.expon)
-print("* Exponential funkar, men den behöver större n, typ n>=100, eftersom den är skev.")
+print("  * Exponential funkar, men den behöver större n, typ n>=100, eftersom den är skev.")
 plot(10**5, 1000, sps.cauchy)
-print("* Cauchy funkar inte, även för stora n.")
+print("  * Cauchy funkar inte, även för stora n.")
