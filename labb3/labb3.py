@@ -56,4 +56,5 @@ plot(sps.expon)
 print("  * Exponential funkar, men den behöver större n, typ n>=100, eftersom den är skev.")
 
 plot(sps.cauchy)
-print("  * Cauchy funkar inte, även för stora n.")
+print("  * Cauchy funkar inte, även för stora n. Den har alltid tjocka svansar som inte "
+      "kan representeras av normalapproximationen.")
