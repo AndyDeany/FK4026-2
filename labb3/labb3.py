@@ -31,14 +31,12 @@ def plot(distribution):
             mu = np.mean(summor)
             sigma = np.std(summor)
             y = sps.norm.pdf(x, mu, sigma)
-            axes[i].plot(x, y, color="#f700ff", label=f"N({mu:.3f}, {sigma:.3f}²)")
+            axes[i].plot(x, y, color="#f700ff", label=f"N({mu:.2f}, {sigma:.2f}²)")
             axes[i].legend()
             axes[i].set_title(f"n={n}")
 
       plt.suptitle(f"{distribution.name.capitalize()} fördelning: summor av n observationer.")
       plt.show()
-
-
 
 
 plot(sps.uniform)
@@ -48,10 +46,11 @@ print("2.1.5. Det ser ganska normalfördelade ut vid n>=5, tycker jag.")
 print("2.1.6.")
 
 plot(sps.norm)
-print("  4* Norm funkar bra även med n=1 (såklart).")
+print("  * Norm funkar bra även med n=1 (såklart).")
 
 plot(sps.laplace)
-print("  * Laplace funkar bra med n>=5.")
+print("  * Laplace behöver lite större n för att gör spetsen i mitten mindre. "
+      "Det funkar bra med n>=20.")
 
 plot(sps.expon)
 print("  * Exponential funkar, men den behöver större n, typ n>=100, eftersom den är skev.")
